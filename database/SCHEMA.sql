@@ -2,6 +2,8 @@ DROP DATABASE IF EXISTS reviews_service;
 
 CREATE DATABASE reviews_service;
 
+\c reviews_service
+
 /*create properties table*/
 CREATE TABLE IF NOT EXISTS properties(
    property_id SERIAL PRIMARY KEY,
@@ -29,6 +31,7 @@ CREATE TABLE IF NOT EXISTS reviews(
          REFERENCES properties(property_id)
 );
 
+/*CREATES index for the foreign key in reviews table*/
 CREATE INDEX reviews_fk_id_index
 ON reviews ("fk_id" desc);
 
