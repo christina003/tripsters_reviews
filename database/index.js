@@ -2,12 +2,14 @@
 const { Pool } = require('pg');
 
 // update the connection string for the database you want
-const connectionString = 'postgres://christinasantos:postgres@localhost:5432/reviewsService';
+const connectionString = 'postgres://christinasantos:postgres@localhost:5432/reviews_service';
 
-const pool = new Pool({
+const db = new Pool({
   connectionString,
 });
 
-pool.connect()
+db.connect()
   .then(console.log('connected to database'))
   .catch((err) => console.log(err));
+
+module.exports = db;

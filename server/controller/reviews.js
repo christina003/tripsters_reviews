@@ -1,14 +1,11 @@
-/* eslint-disable max-len */
-// const Reviews = require('../../database/Reviews.js');
+const db = require('../../database/index.js');
 
-// const Reviews = require('../../database/index.js');
+const reviews = (req, res) => {
+  const { propertyId } = req.params;
+  const dbQuery = `SELECT * FROM properties INNER JOIN reviews ON property_id = fk_id WHERE property_id = ${propertyId}`;
+  db.query(dbQuery)
+    .then((data) => res.status(200).json(data.rows))
+    .catch((err) => res.status(500).send(err));
+};
 
-// const reviews = (req, res) => {
-//   const { propertyId } = req.params;
-//   const dbQuery = `SELECT * FROM properties INNER JOIN reviews ON property_id = fk_id WHERE property_id = ${propertyId}`;
-//   Reviews.query(dbQuery)
-//     .then((data) => console.log('reviews:', data.rows))
-//     .catch((err) => console.log(err));
-// };
-
-// module.exports = reviews;
+module.exports = reviews;
