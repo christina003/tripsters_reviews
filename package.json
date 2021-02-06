@@ -11,7 +11,12 @@
     "build": "webpack --watch",
     "lint": "eslint . --ext .js,.jsx",
     "seedProperties": "node database/propertiesGenerator.js",
-    "seedReviews": "node database/reviewsGenerator1.js"
+    "seedReviews1": "node database/reviewsGenerator1.js",
+    "seedReviews2": "node database/reviewsGenerator2.js",
+    "seedReviews3": "node database/reviewsGenerator3.js",
+    "seedReviews4": "node database/reviewsGenerator4.js",
+    "seedReviews5": "node database/reviewsGenerator5.js",
+    "seedReviews6": "node database/reviewsGenerator6.js"
   },
   "repository": {
     "type": "git",

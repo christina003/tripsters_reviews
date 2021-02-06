@@ -31,7 +31,7 @@ const startWriting = (writeStream, encoding, done) => {
         writeStream.write(review, encoding, done);
       } else {
         writeStream.write(review, encoding);
-        if (i % 9 === 0 && i !== 9999999) {
+        if (i % 6 === 0) {
           propid += 1;
         }
       }

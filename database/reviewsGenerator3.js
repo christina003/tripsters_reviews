@@ -7,7 +7,7 @@ const lines = 10000000;
 const fileName = path.join(__dirname, 'CSV/reviews3.csv');
 const stream = fs.createWriteStream(fileName);
 const categories = ['Responsive host', 'Great location', 'Helpful host', 'Comfortable beds', 'Easy check-in', 'Great views', 'A quiet neighborhood', 'Central location', 'Thoughtful touches', 'Friendly host', 'Great restaurants'];
-let propid = 2222223;
+let propid = 3333334;
 
 const createReview = () => {
   const random = Math.floor(Math.random() * (1000 - 1) + 1);
@@ -31,7 +31,7 @@ const startWriting = (writeStream, encoding, done) => {
         writeStream.write(review, encoding, done);
       } else {
         writeStream.write(review, encoding);
-        if (i % 9 === 0 && i !== 19999999) {
+        if (i % 6 === 0) {
           propid += 1;
         }
       }

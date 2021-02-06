@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS properties(
    value_rating decimal NOT NULL
 );
 
+
 /*create reviews table*/
 CREATE TABLE IF NOT EXISTS reviews(
    review_id SERIAL PRIMARY KEY,
@@ -23,11 +24,13 @@ CREATE TABLE IF NOT EXISTS reviews(
    category varchar NOT NULL,
    userName varchar NOT NULL,
    userPicture varchar NOT NULL,
-   CONSTRAINT fk_property
+   CONSTRAINT fk_property_id
       FOREIGN KEY(fk_id)
          REFERENCES properties(property_id)
 );
 
+CREATE INDEX reviews_fk_id_index
+ON reviews ("fk_id" desc);
 
 /*COPY the properties CSV to the database*/
 COPY properties (overall_rating_avg, communication_rating, cleanliness_rating, check_in_rating, accuracy_rating, location_rating, value_rating) 
@@ -35,4 +38,19 @@ FROM '/Users/christinasantos/SDC/AirBnb-Reviews-Service/database/CSV/properties.
 
 /*COPY the reviews CSV to the database*/
 COPY reviews (fk_id, body, entry_date, category, userName, userPicture) 
-FROM '/Users/christinasantos/SDC/AirBnb-Reviews-Service/database/CSV/reviews.csv' DELIMITER ',' CSV HEADER;
+FROM '/Users/christinasantos/SDC/AirBnb-Reviews-Service/database/CSV/reviews1.csv' DELIMITER ',' CSV HEADER;
+
+COPY reviews (fk_id, body, entry_date, category, userName, userPicture) 
+FROM '/Users/christinasantos/SDC/AirBnb-Reviews-Service/database/CSV/reviews2.csv' DELIMITER ',' CSV HEADER;
+
+COPY reviews (fk_id, body, entry_date, category, userName, userPicture) 
+FROM '/Users/christinasantos/SDC/AirBnb-Reviews-Service/database/CSV/reviews3.csv' DELIMITER ',' CSV HEADER;
+
+COPY reviews (fk_id, body, entry_date, category, userName, userPicture) 
+FROM '/Users/christinasantos/SDC/AirBnb-Reviews-Service/database/CSV/reviews4.csv' DELIMITER ',' CSV HEADER;
+
+COPY reviews (fk_id, body, entry_date, category, userName, userPicture) 
+FROM '/Users/christinasantos/SDC/AirBnb-Reviews-Service/database/CSV/reviews5.csv' DELIMITER ',' CSV HEADER;
+
+COPY reviews (fk_id, body, entry_date, category, userName, userPicture) 
+FROM '/Users/christinasantos/SDC/AirBnb-Reviews-Service/database/CSV/reviews6.csv' DELIMITER ',' CSV HEADER;
