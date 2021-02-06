@@ -9,8 +9,14 @@
     "start": "node server/index.js",
     "start-dev": "nodemon server/index.js",
     "build": "webpack --watch",
-    "seed": "node database/seed.js",
-    "lint": "eslint . --ext .js,.jsx"
+    "lint": "eslint . --ext .js,.jsx",
+    "seedProperties": "node database/propertiesGenerator.js",
+    "seedReviews1": "node database/reviewsGenerator1.js",
+    "seedReviews2": "node database/reviewsGenerator2.js",
+    "seedReviews3": "node database/reviewsGenerator3.js",
+    "seedReviews4": "node database/reviewsGenerator4.js",
+    "seedReviews5": "node database/reviewsGenerator5.js",
+    "seedReviews6": "node database/reviewsGenerator6.js"
   },
   "repository": {
     "type": "git",
@@ -55,6 +61,7 @@
     "moment": "^2.29.1",
     "mongoose": "^5.11.11",
     "nodemon": "^2.0.7",
+    "pg": "^8.5.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",

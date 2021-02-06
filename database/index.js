@@ -1,16 +1,15 @@
 /* eslint-disable no-console */
-const mongoose = require('mongoose');
+const { Pool } = require('pg');
 
-// const mongoUrl = 'mongodb://localhost/airbnb';
-const mongoUrl = 'mongodb://database/docker_data';
+// update the connection string for the database you want
+const connectionString = 'postgres://christinasantos:postgres@localhost:5432/reviews_service';
 
-// eslint-disable-next-line max-len
-mongoose.connect(mongoUrl, { server: { reconnectTries: Number.MAX_VALUE }, useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose.connection;
-
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-  console.log("we're connected!");
+const db = new Pool({
+  connectionString,
 });
+
+db.connect()
+  .then(console.log('connected to database'))
+  .catch((err) => console.log(err));
 
 module.exports = db;
