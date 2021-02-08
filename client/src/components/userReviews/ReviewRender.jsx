@@ -7,7 +7,7 @@ import ReviewHeader from './ReviewHeader';
 import classes from './UserReviews.module.css';
 
 export default function ReviewRender({
-  reviewBody, profilePicture, firstName, entryDate, userId, hightlightText,
+  reviewBody, profilePicture, firstName, entryDate, hightlightText,
 }) {
   const [isLongReview, setIsLongReview] = useState(false);
   useEffect(() => {
@@ -66,7 +66,7 @@ export default function ReviewRender({
   }
 
   return (
-    <div className={classes.userReview} data-testid={userId}>
+    <div className={classes.userReview}>
       <ReviewHeader profilePicture={profilePicture} firstName={firstName} entryDate={entryDate} />
       {reviewElem}
     </div>
@@ -78,5 +78,4 @@ ReviewRender.propTypes = {
   reviewBody: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,
   entryDate: PropTypes.string.isRequired,
-  userId: PropTypes.number.isRequired,
 };

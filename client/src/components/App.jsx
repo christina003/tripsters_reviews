@@ -43,13 +43,33 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get('/')
-      .then((response) => {
+      .then(({ data }) => {
+        const categories = data.reviews.map((review) => review.category);
+        const catObj = {};
+        const resultCat = [];
+        for (let i = 0; i < categories.length; i += 1) {
+          const currentCat = categories[i];
+          if (catObj[currentCat] === undefined) {
+            catObj[currentCat] = 1;
+          } else {
+            catObj[currentCat] += 1;
+          }
+        }
+        Object.keys(catObj).forEach((cat) => {
+          resultCat.push({ title: cat, count: catObj[cat] });
+        });
+
         this.setState({
-          reviews: response.data.all_reviews,
-          categories: response.data.review_categories,
-          reviewRatings: response.data.review_ratings,
-          numReviews: response.data.num_reviews,
-          overallRatingAvg: response.data.overall_rating_avg,
+          reviews: data.reviews,
+          reviewRatings: [{ title: 'Accuracy', rating: Number(data.accuracy_rating) },
+            { title: 'Check-In', rating: Number(data.check_in_rating) },
+            { title: 'Cleanliness', rating: Number(data.cleanliness_rating) },
+            { title: 'Communication', rating: Number(data.communication_rating) },
+            { title: 'Location', rating: Number(data.location_rating) },
+            { title: 'Value', rating: Number(data.value_rating) }],
+          categories: resultCat,
+          numReviews: data.reviews.length,
+          overallRatingAvg: data.overall_rating_avg,
         });
       })
       .catch((error) => {
