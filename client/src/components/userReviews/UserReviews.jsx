@@ -19,10 +19,10 @@ export default function UserReviews({ reviews, textSearched, mainPage }) {
       // eslint-disable-next-line react/no-array-index-key
       key={index}
       reviewBody={review.body}
-      profilePicture={review.user_info.pictureUrl}
-      firstName={review.user_info.firstName}
+      profilePicture={review.userpicture}
+      firstName={review.username}
       entryDate={review.entry_date}
-      userId={review.user_info.user_id}
+      userId={review.username}
       hightlightText={highlightText}
     />
   ));
