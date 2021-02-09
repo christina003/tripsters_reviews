@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 const { Pool } = require('pg');
 
-// update the connection string for the database you want
-const connectionString = 'postgres://christinasantos:postgres@localhost:5432/reviews_service';
+const connectionString = require('./connectionString.js');
 
+// update the connection string for the database you want
 const db = new Pool({
   connectionString,
 });

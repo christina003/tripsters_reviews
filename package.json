@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest --verbose",
     "test-coverage": "jest  --collect-coverage",
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
+    "start-dev": "nodemon server/index.js",
     "build": "webpack --watch",
     "lint": "eslint . --ext .js,.jsx",
     "seedProperties": "node database/propertiesGenerator.js",
