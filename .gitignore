@@ -1,2 +1,5 @@
 node_modules
 database/CSV
+server/newrelic.js
+server/stressTest.js
+newrelic_agent.log
