@@ -4,3 +4,4 @@ server/newrelic.js
 server/stressTest.js
 database/connectionString.js
 newrelic_agent.log
+client/dist/bundle.js
