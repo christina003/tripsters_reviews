@@ -8,7 +8,7 @@
     "test-coverage": "jest  --collect-coverage",
     "start": "node server/index.js",
     "start-dev": "nodemon server/index.js",
-    "build": "webpack --watch",
+    "build": "webpack",
     "lint": "eslint . --ext .js,.jsx",
     "seedProperties": "node database/propertiesGenerator.js",
     "seedReviews1": "node database/reviewsGenerator1.js",
