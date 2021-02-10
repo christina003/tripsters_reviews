@@ -2,4 +2,5 @@ node_modules
 database/CSV
 server/newrelic.js
 server/stressTest.js
+database/connectionString.js
 newrelic_agent.log
