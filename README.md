@@ -52,11 +52,11 @@ Took a legacy codebase designed with a document-based database for storing 1,000
 
 **Prior schema for document database:**
 
-<img src="images/oldSchema.png" alt="old" width="250" height="400">
+<img src="oldSchema.png" alt="old" width="250" height="400">
 
 **Adjusted schema for PostgreSQL database:**
 
-<img src="images/newSchema.png" alt="new" width="350" height="300">
+<img src="newSchema.png" alt="new" width="350" height="300">
 
 ### Built With
 
