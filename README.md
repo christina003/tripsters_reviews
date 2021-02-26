@@ -43,7 +43,7 @@ Took a legacy codebase designed with a document-based database for storing 1,000
 
 - Changed from document based database to sql database (PostgreSQL)
 - Scaled the amount of records to 10 million primary property records and 60 million secondary review records ** See the Before & After <a href="####Schema">Schema Design </a>below **
-- Reduced database query speeds
+- Reduced database query speeds from 14s to under 1 milisecond
 - Deployed service to AWS on an EC2 instance
 - Implemented NGINX Load Balancer and additional EC2 instances
 - Stress tested with Loader.io and New Relic
